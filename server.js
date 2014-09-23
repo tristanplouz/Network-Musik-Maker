@@ -25,6 +25,7 @@ io.sockets.on('connection', function (socket) {  //Un client vas sur la page
     
     socket.on('newPLayer',function(e){  //Un client se connecte
       player.new(e.username,socket.id,e.salon,e.instrument);
+      player.connected(socket);
     });
     
     socket.on('disconnect',function(e) {  //Un client se deconnecte
